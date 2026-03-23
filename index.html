@@ -5,18 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Elegant Eventos</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f9f6f2;
+    font-family: 'Cormorant Garamond', serif;
+    background: #f5f2ed;
+    color: #4a3f36;
 }
 
 /* HEADER */
 header {
-    background: #d9c7b7; /* adjusted beige for contrast */
+    background: #d9c7b7; /* soft, luxury beige */
     color: #2c2c2c;
     text-align: center;
     padding: 25px;
@@ -29,8 +30,8 @@ header h1 {
 }
 
 header p {
-    font-size: 14px;
-    color: #7a6a58;
+    font-size: 16px;
+    color: #6e5e4c;
 }
 
 /* NAVBAR */
@@ -38,14 +39,18 @@ nav {
     display: flex;
     justify-content: center;
     gap: 40px;
-    background: #ffffff;
+    background: #fff8f2;
     padding: 15px;
 }
 
 nav a {
-    color: #444;
+    color: #4a3f36;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+nav a:hover {
+    color: #bfa07f;
 }
 
 /* HERO */
@@ -63,7 +68,7 @@ nav a {
 .hero::before {
     content: "";
     position: absolute;
-    top: 45%; /* shifted a bit */
+    top: 45%; /* shifted slightly */
     left: 50%;
     width: 110%;
     height: 110%;
@@ -82,7 +87,7 @@ nav a {
     max-width: 700px;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section {
     padding: 80px 20px;
     max-width: 900px;
@@ -94,15 +99,16 @@ nav a {
     font-family: 'Playfair Display', serif;
     font-size: 34px;
     margin-bottom: 20px;
+    color: #3b3229;
 }
 
 .section p {
-    color: #5c5c5c;
     line-height: 1.8;
-    font-size: 15px;
+    font-size: 16px;
+    color: #4a3f36;
+    font-family: 'Cormorant Garamond', serif;
 }
 
-/* WEDDING PLANNING LIST */
 ul {
     margin-left: 20px;
     margin-bottom: 20px;
@@ -133,7 +139,7 @@ ul {
     padding: 0 20px;
     display: none;
     overflow: hidden;
-    background-color: #f9f6f2;
+    background-color: #f5f2ed;
 }
 
 .content ul {
