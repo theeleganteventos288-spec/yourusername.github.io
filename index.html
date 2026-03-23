@@ -12,27 +12,25 @@
 body {
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
-    background: #fffaf6; /* soft shimmer white */
-    background-image: radial-gradient(circle at top left, rgba(255,235,210,0.2), rgba(255,250,245,0.2) 70%), 
-                      url('your-background.jpg'); /* optional main background image */
-    background-size: cover;
-    background-attachment: fixed;
+    background: #fffaf6;
+    background-image: radial-gradient(circle at top left, rgba(255, 235, 210, 0.2), rgba(255, 250, 245, 0.2) 70%);
     color: #4a3f36;
 }
 
 /* HEADER */
 header {
-    background: #f3e8dc; /* soft elegant gold-beige */
+    background: #f3e8dc; 
     color: #2c2c2c;
     text-align: center;
     padding: 25px;
+    box-shadow: 0 2px 10px rgba(191,160,127,0.2);
 }
 
 header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 44px;
     margin: 0;
-    text-shadow: 1px 1px 3px rgba(191,160,127,0.4);
+    text-shadow: 1px 1px 3px rgba(255,215,180,0.5);
 }
 
 header p {
@@ -47,12 +45,14 @@ nav {
     gap: 40px;
     background: #fff8f2;
     padding: 15px;
+    box-shadow: 0 2px 10px rgba(191,160,127,0.15);
 }
 
 nav a {
     color: #4a3f36;
     text-decoration: none;
     font-size: 16px;
+    font-weight: 500;
 }
 
 nav a:hover {
@@ -69,20 +69,18 @@ nav a:hover {
     color: #fff5e6;
     position: relative;
     overflow: hidden;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    width: 110%;
-    height: 110%;
-    transform: translate(-50%, -50%);
     background: url('https://raw.githubusercontent.com/theeleganteventos288-spec/yourusername.github.io/main/admin/wedding.jpg') no-repeat center center;
     background-size: cover;
-    filter: brightness(0.7);
-    z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0; left:0;
+    background: rgba(255, 235, 200, 0.25);
+    pointer-events: none;
 }
 
 .hero h2 {
@@ -91,6 +89,7 @@ nav a:hover {
     font-size: 48px;
     font-family: 'Playfair Display', serif;
     max-width: 700px;
+    text-shadow: 2px 2px 8px rgba(255, 215, 180, 0.6);
 }
 
 /* SECTION */
@@ -106,43 +105,46 @@ nav a:hover {
     font-size: 34px;
     margin-bottom: 20px;
     color: #3b3229;
+    position: relative;
 }
 
-.section p {
-    line-height: 1.8;
-    font-size: 16px;
+.section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #bfa07f;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    border-radius: 2px;
+}
+
+/* GLITTER EFFECT SPARKLES */
+.glitter {
+    background: linear-gradient(145deg, rgba(255, 215, 180, 0.15), rgba(255, 235, 210, 0.15));
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 8px 30px rgba(191,160,127,0.12);
+}
+
+/* SERVICES */
+#services h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 15px;
     color: #4a3f36;
 }
 
-/* COLLAPSIBLE MORE SERVICES */
-.collapsible {
-    background-color: #f3e8dc; /* light elegant beige */
-    color: #3b3229;
-    cursor: pointer;
-    padding: 15px 20px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 18px;
-    font-family: 'Playfair Display', serif;
-    font-weight: bold;
-    transition: background-color 0.3s;
-    margin-top: 20px;
+#services p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #5c5045;
 }
 
-.collapsible:hover {
-    background-color: #eadac9;
-}
-
-.content {
-    padding: 0 20px;
-    display: none;
-    overflow: hidden;
-    background-color: #fef8f2;
-}
-
-/* EXPERTISE GRID - PREMIUM STYLE */
+/* EXPERTISE */
 #expertise .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -151,12 +153,11 @@ nav a:hover {
 }
 
 #expertise .card {
-    background: linear-gradient(145deg, #fdf6f0, #f7eee1);
+    background: linear-gradient(135deg, #fff8f2, #fdf6f0);
     border-radius: 20px;
     padding: 30px;
     box-shadow: 0 8px 30px rgba(191,160,127,0.15);
     transition: all 0.4s ease;
-    font-family: 'Cormorant Garamond', serif;
     color: #4a3f36;
 }
 
@@ -167,14 +168,13 @@ nav a:hover {
 
 #expertise .card .icon {
     font-size: 40px;
-    color: #bfa07f; /* gold */
+    color: #bfa07f;
     margin-bottom: 15px;
 }
 
 #expertise .card h3 {
     font-family: 'Playfair Display', serif;
     font-size: 22px;
-    color: #3b3229;
     margin-bottom: 10px;
 }
 
@@ -184,31 +184,13 @@ nav a:hover {
     color: #5c5045;
 }
 
-/* GOLD LINE UNDER SECTION TITLE */
-#expertise h2 {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-}
-
-#expertise h2::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 3px;
-    background-color: #bfa07f;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
-    border-radius: 2px;
-}
-
 /* CONTACT INFO */
 .contact-info {
     margin-top: 40px;
     background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(191,160,127,0.12);
 }
 
 .contact-info p {
@@ -216,10 +198,11 @@ nav a:hover {
     font-size: 16px;
 }
 
-/* CONTACT NUMBERS SPECIAL FONT */
+/* CONTACT NUMBERS - SPECIAL FONT */
 .contact-info .phone {
     font-family: 'Playfair Display', serif;
-    font-weight: 600;
+    font-weight: 700;
+    font-size: 18px;
     color: #3b3229;
 }
 
@@ -231,9 +214,39 @@ footer {
     padding: 25px;
     margin-top: 50px;
 }
+
+/* COLLAPSIBLE MORE SERVICES */
+.collapsible {
+    background-color: #f9f0e3;
+    color: #3b3229;
+    cursor: pointer;
+    padding: 15px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.collapsible:hover {
+    background-color: #f3e8dc;
+}
+
+.content {
+    padding: 20px;
+    display: none;
+    overflow: hidden;
+    background-color: #fffaf6;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(191,160,127,0.12);
+}
+
 </style>
 </head>
-
 <body>
 
 <header>
@@ -242,7 +255,6 @@ footer {
 </header>
 
 <nav>
-<a href="#">Home</a>
 <a href="#about">About</a>
 <a href="#why-hire">Why Hire Us</a>
 <a href="#founder">Founder</a>
@@ -255,163 +267,86 @@ footer {
 <h2>Designing Timeless Indian Weddings with Elegance</h2>
 </div>
 
-<!-- ABOUT SECTION -->
+<!-- ABOUT -->
 <div class="section" id="about">
+<div class="glitter">
 <h2>About Elegant Eventos</h2>
 <p>At Elegant Eventos, we craft experiences that are timeless, refined, and deeply personal. Established in 2020, our journey has been defined by a passion for transforming celebrations into unforgettable stories.</p>
-<p>With a portfolio of 60+ meticulously curated events, we specialize in luxury wedding planning while also designing bespoke bachelorette soirées, birthday celebrations, baby showers, and corporate gatherings. Every event we create is a seamless blend of elegance, creativity, and precision — thoughtfully tailored to reflect the unique vision of our clients.</p>
-<p>From conceptualisation to flawless execution, we offer end-to-end event planning services, ensuring every detail — from décor aesthetics to guest experience — is handled with sophistication and care. Our strength lies in our eye for detail, strong vendor collaborations, and the ability to turn even the smallest ideas into grand, immersive experiences.</p>
-<p>At Elegant Eventos, we don’t just plan events — we design moments that linger long after the celebration ends.</p>
+<p>We specialize in luxury weddings, bespoke parties, and corporate gatherings — each event a seamless blend of elegance, creativity, and precision.</p>
+</div>
 </div>
 
-<!-- WHY HIRE US SECTION -->
+<!-- WHY HIRE US -->
 <div class="section" id="why-hire">
+<div class="glitter">
 <h2>Why Hire Us as Your Wedding Planner?</h2>
-<p>We turn your vision into a beautifully curated celebration, handling every detail with precision and care. From concept to execution, our team ensures a seamless and stress-free experience for you and your family. With strong vendor networks and creative expertise, we deliver designs that are elegant, unique, and memorable. We focus on personalization, making every wedding a true reflection of your story. Our commitment to quality, timelines, and flawless execution sets us apart. With us, you don’t just plan a wedding—you experience it. ✨</p>
+<p>We turn your vision into a beautifully curated celebration, handling every detail with precision and care. From concept to execution, our team ensures a seamless and stress-free experience for you and your family. With strong vendor networks and creative expertise, we deliver designs that are elegant, unique, and memorable. Our focus on personalization makes every wedding a reflection of your story. ✨</p>
+</div>
 </div>
 
-<!-- FOUNDER SECTION -->
+<!-- FOUNDER -->
 <div class="section" id="founder">
+<div class="glitter">
 <h2>About the Founder</h2>
-<p>I’m Kapil Navedia, founder of Elegant Eventos, based in the royal city of Udaipur, Rajasthan — a destination synonymous with grandeur and timeless celebrations.</p>
-<p>What began in 2020 as a vision driven by passion has today evolved into a journey of creativity, growth, and meaningful connections. Over the years, I’ve had the privilege of working on diverse celebrations, gaining invaluable experience and the trust of wonderful clients.</p>
-<p>My approach is simple — every event is personal. I believe in understanding each client’s story and translating it into an experience that feels effortless, elegant, and truly unforgettable. With a hands-on approach and a keen eye for detail, I ensure that every celebration carries a signature touch of sophistication.</p>
-<p>For me, success is measured not just by beautifully executed events, but by the smiles, emotions, and memories we create along the way.</p>
+<p>I’m Kapil Navedia, founder of Elegant Eventos, based in Udaipur — a destination synonymous with grandeur and timeless celebrations.</p>
+<p>We ensure every event carries a signature touch of sophistication and elegance.</p>
+</div>
 </div>
 
-<!-- SERVICES SECTION -->
+<!-- SERVICES -->
 <div class="section" id="services">
+<div class="glitter">
 <h2>Event Planning</h2>
-<p>We craft seamless, unforgettable celebrations with elegance and precision. Our main expertise is in wedding planning, while we also cater to a variety of other events.</p>
+<p>Our expertise lies in creating luxurious weddings and memorable celebrations.</p>
 
-<h2>Wedding Planning 💍</h2>
-<ul>
-<li>Full-service wedding planning & end-to-end coordination</li>
-<li>Destination wedding planning & logistics</li>
-<li>Concept creation, decor & theme design</li>
-<li>Venue selection & booking assistance</li>
-<li>Vendor management (photographers, videographers, caterers, makeup artists, entertainers, etc.)</li>
-<li>Budget planning & cost management</li>
-<li>Guest management (RSVPs, hospitality, welcome kits)</li>
-<li>Travel & accommodation arrangements for guests</li>
-<li>Invitation design & wedding stationery coordination</li>
-<li>Bridal & groom styling coordination (outfits, makeup, grooming)</li>
-<li>Entertainment planning (DJ, live artists, performances)</li>
-<li>Wedding rituals & ceremony planning (timeline, traditions, flow)</li>
-<li>Mehndi, Haldi, Sangeet & pre-wedding function planning</li>
-<li>Pre-wedding shoot planning & execution</li>
-<li>Luxury experiences & curated guest activities</li>
-<li>Logistics & transportation management</li>
-<li>Wedding day timeline creation & execution</li>
-<li>On-ground team management & troubleshooting</li>
-<li>Day-of coordination for seamless execution</li>
-<li>Post-wedding services (reception planning, gifting, wrap-up)</li>
-</ul>
+<h3>Wedding Planning 💍</h3>
+<p>Full-service planning, destination logistics, decor & theme design, vendor management, guest coordination, entertainment, bridal styling, timelines, and seamless execution.</p>
 
 <button class="collapsible">More Services ⬇️</button>
 <div class="content">
-<h3>Birthday Celebrations 🎉</h3>
-<ul>
-<li>Themed birthday parties (kids & adults)</li>
-<li>Custom decor & styling</li>
-<li>Cake & catering arrangements</li>
-<li>Entertainment & games coordination</li>
-<li>Venue selection & logistics</li>
-<li>Surprise elements & personalized experiences</li>
-</ul>
-
-<h3>Bachelorette & Bachelor Parties 💃🕺</h3>
-<ul>
-<li>Destination party planning</li>
-<li>Party themes & styling</li>
-<li>Activities & entertainment planning</li>
-<li>Catering & drinks coordination</li>
-<li>Personalized keepsakes for the group</li>
-</ul>
-
-<h3>Corporate Events 🏢</h3>
-<ul>
-<li>Conferences & seminars</li>
-<li>Product launches & brand activations</li>
-<li>Team-building events</li>
-<li>Gala dinners & award nights</li>
-<li>Event branding, stage decor & AV management</li>
-<li>VIP guest handling & logistics</li>
-</ul>
-
-<h3>Baby Showers & Naming Ceremonies 👶</h3>
-<ul>
-<li>Theme & decor planning</li>
-<li>Catering & cake coordination</li>
-<li>Photography & videography</li>
-<li>Games & entertainment management</li>
-</ul>
-
-<h3>Anniversary & Milestone Celebrations 💖</h3>
-<ul>
-<li>Elegant decor & styling</li>
-<li>Special experiences & entertainment</li>
-<li>Guest coordination</li>
-<li>Memory albums & photo/video services</li>
-</ul>
-
-<h3>Social & Cultural Gatherings 🎊</h3>
-<ul>
-<li>Festivals & private parties</li>
-<li>Custom experiences & themes</li>
-<li>Music & entertainment booking</li>
-<li>Venue selection & event logistics</li>
-</ul>
-
-<h3>Additional Services We Provide ✨</h3>
-<ul>
-<li>Budget management & vendor negotiation</li>
-<li>Invitation design & RSVP tracking</li>
-<li>Transportation & accommodation arrangements</li>
-<li>Event day coordination & timeline management</li>
-<li>Luxury add-ons: lighting, floral design, audio-visual experiences, welcome kits</li>
-</ul>
+<p>Birthday parties, bachelorette/bachelor parties, corporate events, baby showers, anniversaries, and social gatherings — all meticulously planned with elegance and precision.</p>
+</div>
 </div>
 </div>
 
-<!-- EXPERTISE SECTION -->
+<!-- EXPERTISE -->
 <div class="section" id="expertise">
 <h2>Our Expertise</h2>
 <div class="grid">
 <div class="card">
 <div class="icon">🎶</div>
 <h3>Musical Entertainment</h3>
-<p>From live artists to DJs and curated performances, we create unforgettable entertainment experiences full of energy.</p>
+<p>From live artists to DJs and curated performances, we create unforgettable experiences.</p>
 </div>
 <div class="card">
 <div class="icon">🌍</div>
 <h3>Destination Weddings</h3>
-<p>We design and execute breathtaking destination weddings, managing everything from travel to venue styling.</p>
+<p>Breathtaking destination weddings, managing travel, venue styling, and guest comfort.</p>
 </div>
 <div class="card">
 <div class="icon">🤝</div>
 <h3>Vendor Management</h3>
-<p>With our trusted vendor network, we ensure seamless execution of décor, catering, and all services.</p>
+<p>Trusted vendor network ensures seamless execution of decor, catering, and services.</p>
 </div>
 <div class="card">
 <div class="icon">🚗</div>
 <h3>Hospitality & Transport</h3>
-<p>We manage guest stays, welcome experiences, and smooth transportation throughout the celebration.</p>
+<p>Guest stays, welcome experiences, and smooth transportation throughout celebrations.</p>
 </div>
 <div class="card">
 <div class="icon">💰</div>
 <h3>Budget Management</h3>
-<p>We help you plan smartly, keeping your wedding within budget while delivering a luxurious experience.</p>
+<p>Planning smartly, keeping your events luxurious yet cost-efficient.</p>
 </div>
 <div class="card">
 <div class="icon">💍</div>
 <h3>Wedding Planning</h3>
-<p>End-to-end planning from concept to execution, ensuring a stress-free and beautifully curated wedding.</p>
+<p>From concept to execution, we ensure stress-free, elegant, and memorable weddings.</p>
 </div>
 </div>
 </div>
 
-<!-- CONTACT INFO -->
+<!-- CONTACT -->
 <div class="section contact-info" id="contact">
 <h2>Contact Us 📞</h2>
 <p><strong>Phone:</strong> <span class="phone">7014941806, 9509106607</span></p>
@@ -423,7 +358,6 @@ footer {
 </footer>
 
 <script>
-// Collapsible JS
 const coll = document.querySelector(".collapsible");
 const content = document.querySelector(".content");
 
