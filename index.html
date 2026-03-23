@@ -14,20 +14,18 @@ body {
     background: #f9f6f2;
 }
 
-/* HEADER (ROYAL LOOK) */
+/* HEADER */
 header {
     background: #f3e9dc;
     color: #2c2c2c;
     text-align: center;
     padding: 25px;
-    border-bottom: 1px solid #e0d5c5;
 }
 
 header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 44px;
     margin: 0;
-    letter-spacing: 2px;
 }
 
 header p {
@@ -42,74 +40,66 @@ nav {
     gap: 40px;
     background: #ffffff;
     padding: 15px;
-    border-bottom: 1px solid #eee;
 }
 
 nav a {
     color: #444;
     text-decoration: none;
     font-size: 14px;
-    letter-spacing: 1px;
 }
 
-/* HERO (SMALLER + PREMIUM) */
+/* HERO */
 .hero {
     height: 70vh;
-    background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url('https://raw.githubusercontent.com/theeleganteventos288-spec/yourusername.github.io/main/admin/wedding.jpg') center/cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    color: #fff5e6;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 110%;
+    transform: translate(-50%, -50%);
+    background: url('https://raw.githubusercontent.com/theeleganteventos288-spec/yourusername.github.io/main/admin/wedding.jpg') no-repeat center center;
+    background-size: cover;
+    filter: brightness(0.7);
+    z-index: 0;
 }
 
 .hero h2 {
+    position: relative;
+    z-index: 1;
     font-size: 48px;
     font-family: 'Playfair Display', serif;
     max-width: 700px;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
-    padding: 70px 20px;
+    padding: 80px 20px;
+    max-width: 900px;
+    margin: auto;
     text-align: center;
 }
 
 .section h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 32px;
+    font-size: 34px;
     margin-bottom: 20px;
 }
 
-.services {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    flex-wrap: wrap;
-}
-
-.card {
-    background: white;
-    padding: 30px;
-    width: 260px;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+.section p {
+    color: #5c5c5c;
+    line-height: 1.8;
     font-size: 15px;
-}
-
-/* PRICING */
-.pricing-text {
-    font-size: 24px;
-    font-family: 'Playfair Display', serif;
-    color: #b89b5e;
-}
-
-/* GALLERY */
-.gallery img {
-    width: 280px;
-    margin: 10px;
-    border-radius: 10px;
 }
 
 /* WHATSAPP */
@@ -122,7 +112,6 @@ nav a {
     padding: 15px;
     border-radius: 50%;
     text-decoration: none;
-    font-size: 20px;
 }
 
 /* FOOTER */
@@ -131,6 +120,7 @@ footer {
     color: #6d5c4b;
     text-align: center;
     padding: 25px;
+    margin-top: 50px;
 }
 </style>
 </head>
@@ -144,8 +134,8 @@ footer {
 
 <nav>
 <a href="#">Home</a>
-<a href="#">Services</a>
-<a href="#">Pricing</a>
+<a href="#about">About</a>
+<a href="#founder">Founder</a>
 <a href="#">Gallery</a>
 <a href="#">Contact</a>
 </nav>
@@ -154,24 +144,46 @@ footer {
 <h2>Designing Timeless Indian Weddings with Elegance</h2>
 </div>
 
-<div class="section">
-<h2>Our Services</h2>
-<div class="services">
-<div class="card">Luxury Wedding Planning</div>
-<div class="card">Destination Weddings</div>
-<div class="card">Private Celebrations</div>
-</div>
+<!-- ABOUT SECTION -->
+<div class="section" id="about">
+<h2>About Elegant Eventos</h2>
+
+<p>
+At Elegant Eventos, we craft experiences that are timeless, refined, and deeply personal. Established in 2020, our journey has been defined by a passion for transforming celebrations into unforgettable stories.
+</p>
+
+<p>
+With a portfolio of 60+ meticulously curated events, we specialize in luxury wedding planning while also designing bespoke bachelorette soirées, birthday celebrations, baby showers, and corporate gatherings. Every event we create is a seamless blend of elegance, creativity, and precision — thoughtfully tailored to reflect the unique vision of our clients.
+</p>
+
+<p>
+From conceptualisation to flawless execution, we offer end-to-end event planning services, ensuring every detail — from décor aesthetics to guest experience — is handled with sophistication and care. Our strength lies in our eye for detail, strong vendor collaborations, and the ability to turn even the smallest ideas into grand, immersive experiences.
+</p>
+
+<p>
+At Elegant Eventos, we don’t just plan events — we design moments that linger long after the celebration ends.
+</p>
 </div>
 
-<div class="section">
-<h2>Pricing</h2>
-<p class="pricing-text">Events starting from ₹12 Lakhs</p>
-<p style="color: gray;">Exclusively curated experiences tailored to your vision.</p>
-</div>
+<!-- FOUNDER SECTION -->
+<div class="section" id="founder">
+<h2>About the Founder</h2>
 
-<div class="section gallery">
-<h2>Gallery</h2>
-<p>Add your real event images here</p>
+<p>
+I’m Kapil Navedia, founder of Elegant Eventos, based in the royal city of Udaipur, Rajasthan — a destination synonymous with grandeur and timeless celebrations.
+</p>
+
+<p>
+What began in 2020 as a vision driven by passion has today evolved into a journey of creativity, growth, and meaningful connections. Over the years, I’ve had the privilege of working on diverse celebrations, gaining invaluable experience and the trust of wonderful clients.
+</p>
+
+<p>
+My approach is simple — every event is personal. I believe in understanding each client’s story and translating it into an experience that feels effortless, elegant, and truly unforgettable. With a hands-on approach and a keen eye for detail, I ensure that every celebration carries a signature touch of sophistication.
+</p>
+
+<p>
+For me, success is measured not just by beautifully executed events, but by the smiles, emotions, and memories we create along the way.
+</p>
 </div>
 
 <a class="whatsapp" href="https://wa.me/917014941806">💬</a>
