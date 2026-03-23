@@ -5,32 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Elegant Eventos</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #f9f6f2;
+    font-family: 'Cormorant Garamond', serif;
+    background: #f5f2ed;
+    color: #4a3f36;
 }
 
 /* HEADER */
 header {
-    background: #f3e9dc;
-    color: #2c2c2c;
+    background: #e8dacc;
+    color: #3b3229;
     text-align: center;
     padding: 25px;
 }
 
 header h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 44px;
+    font-size: 48px;
     margin: 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 header p {
-    font-size: 14px;
-    color: #7a6a58;
+    font-size: 16px;
+    color: #6e5e4c;
 }
 
 /* NAVBAR */
@@ -38,14 +40,19 @@ nav {
     display: flex;
     justify-content: center;
     gap: 40px;
-    background: #ffffff;
+    background: #fff8f2;
     padding: 15px;
 }
 
 nav a {
-    color: #444;
+    color: #4a3f36;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #bfa07f;
 }
 
 /* HERO */
@@ -68,18 +75,33 @@ nav a {
     width: 110%;
     height: 110%;
     transform: translate(-50%, -50%);
-    background: url('https://raw.githubusercontent.com/theeleganteventos288-spec/yourusername.github.io/main/admin/wedding.jpg') no-repeat center center;
+    background: url('https://raw.githubusercontent.com/theeleganteventos288-spec/yourusername.github.io/main/admin/wedding.jpg') no-repeat center 40%; /* shifted vertically */
     background-size: cover;
-    filter: brightness(0.7);
+    filter: brightness(0.65);
     z-index: 0;
 }
 
 .hero h2 {
     position: relative;
     z-index: 1;
-    font-size: 48px;
+    font-size: 50px;
     font-family: 'Playfair Display', serif;
     max-width: 700px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+/* Glow animation for hero text */
+@keyframes glow {
+    0% {
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.3), 0 0 5px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.3), 0 0 15px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        text-shadow: 2px 2px 6px rgba(0,0,0,0.3), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
 }
 
 /* SECTION */
@@ -92,14 +114,15 @@ nav a {
 
 .section h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    margin-bottom: 20px;
+    font-size: 36px;
+    margin-bottom: 25px;
+    color: #3b3229;
 }
 
 .section p {
-    color: #5c5c5c;
     line-height: 1.8;
-    font-size: 15px;
+    font-size: 16px;
+    color: #4a3f36;
 }
 
 /* WHATSAPP */
@@ -112,12 +135,13 @@ nav a {
     padding: 15px;
     border-radius: 50%;
     text-decoration: none;
+    font-size: 22px;
 }
 
 /* FOOTER */
 footer {
-    background: #f3e9dc;
-    color: #6d5c4b;
+    background: #e8dacc;
+    color: #6e5e4c;
     text-align: center;
     padding: 25px;
     margin-top: 50px;
@@ -149,19 +173,19 @@ footer {
 <h2>About Elegant Eventos</h2>
 
 <p>
-At Elegant Eventos, we craft experiences that are timeless, refined, and deeply personal. Established in 2020, our journey has been defined by a passion for transforming celebrations into unforgettable stories.
+At Elegant Eventos, we craft experiences that are timeless, sophisticated, and deeply personal. Founded in 2020, our journey has been fueled by a passion for turning dreams into celebrations that linger in memory long after the last toast.
 </p>
 
 <p>
-With a portfolio of 60+ meticulously curated events, we specialize in luxury wedding planning while also designing bespoke bachelorette soirées, birthday celebrations, baby showers, and corporate gatherings. Every event we create is a seamless blend of elegance, creativity, and precision — thoughtfully tailored to reflect the unique vision of our clients.
+With a portfolio of over 60 meticulously curated events, we specialize in luxury wedding planning, alongside bespoke bachelorette soirées, birthday celebrations, baby showers, and corporate gatherings. Every detail is thoughtfully designed to mirror the unique vision of our clients.
 </p>
 
 <p>
-From conceptualisation to flawless execution, we offer end-to-end event planning services, ensuring every detail — from décor aesthetics to guest experience — is handled with sophistication and care. Our strength lies in our eye for detail, strong vendor collaborations, and the ability to turn even the smallest ideas into grand, immersive experiences.
+From concept to flawless execution, our end-to-end event services ensure every moment—from décor aesthetics to guest experiences—is handled with elegance, precision, and care. We pride ourselves on our keen eye for detail, trusted vendor collaborations, and the ability to transform even the smallest ideas into grand, immersive experiences.
 </p>
 
 <p>
-At Elegant Eventos, we don’t just plan events — we design moments that linger long after the celebration ends.
+At Elegant Eventos, we don’t just plan events—we create <strong>memorable moments</strong> that shine with timeless beauty and sophistication.
 </p>
 </div>
 
@@ -174,11 +198,11 @@ I’m Kapil Navedia, founder of Elegant Eventos, based in the royal city of Udai
 </p>
 
 <p>
-What began in 2020 as a vision driven by passion has today evolved into a journey of creativity, growth, and meaningful connections. Over the years, I’ve had the privilege of working on diverse celebrations, gaining invaluable experience and the trust of wonderful clients.
+What began in 2020 as a vision driven by passion has grown into a journey of creativity, growth, and meaningful connections. Over the years, I’ve had the privilege of working on diverse celebrations, gaining invaluable experience and the trust of wonderful clients.
 </p>
 
 <p>
-My approach is simple — every event is personal. I believe in understanding each client’s story and translating it into an experience that feels effortless, elegant, and truly unforgettable. With a hands-on approach and a keen eye for detail, I ensure that every celebration carries a signature touch of sophistication.
+My approach is simple — every event is personal. By understanding each client’s story, I craft experiences that feel effortless, elegant, and truly unforgettable. With a hands-on approach and a keen eye for detail, every celebration carries a signature touch of sophistication.
 </p>
 
 <p>
