@@ -8,17 +8,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
+/* GLOBAL STYLING */
 body {
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
-    background: url('your-background.jpg') no-repeat center center fixed; /* Replace with your image */
+    background: #fffaf6; /* soft shimmer white */
+    background-image: radial-gradient(circle at top left, rgba(255,235,210,0.2), rgba(255,250,245,0.2) 70%), 
+                      url('your-background.jpg'); /* optional main background image */
     background-size: cover;
+    background-attachment: fixed;
     color: #4a3f36;
 }
 
 /* HEADER */
 header {
-    background: #eadac9; /* lighter beige */
+    background: #f3e8dc; /* soft elegant gold-beige */
     color: #2c2c2c;
     text-align: center;
     padding: 25px;
@@ -28,6 +32,7 @@ header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 44px;
     margin: 0;
+    text-shadow: 1px 1px 3px rgba(191,160,127,0.4);
 }
 
 header p {
@@ -88,7 +93,7 @@ nav a:hover {
     max-width: 700px;
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
     padding: 80px 20px;
     max-width: 900px;
@@ -107,18 +112,11 @@ nav a:hover {
     line-height: 1.8;
     font-size: 16px;
     color: #4a3f36;
-    font-family: 'Cormorant Garamond', serif;
-}
-
-ul {
-    margin-left: 20px;
-    margin-bottom: 20px;
-    text-align: left;
 }
 
 /* COLLAPSIBLE MORE SERVICES */
 .collapsible {
-    background-color: #eadac9; /* lighter beige */
+    background-color: #f3e8dc; /* light elegant beige */
     color: #3b3229;
     cursor: pointer;
     padding: 15px 20px;
@@ -128,28 +126,20 @@ ul {
     outline: none;
     font-size: 18px;
     font-family: 'Playfair Display', serif;
-    font-weight: bold; /* bold as requested */
+    font-weight: bold;
     transition: background-color 0.3s;
     margin-top: 20px;
 }
 
 .collapsible:hover {
-    background-color: #d4c3af;
+    background-color: #eadac9;
 }
 
 .content {
     padding: 0 20px;
     display: none;
     overflow: hidden;
-    background-color: #f5f2ed;
-}
-
-.content ul {
-    margin-left: 20px;
-}
-
-.content li {
-    margin-bottom: 8px;
+    background-color: #fef8f2;
 }
 
 /* EXPERTISE GRID - PREMIUM STYLE */
@@ -161,23 +151,23 @@ ul {
 }
 
 #expertise .card {
-    background: #f9f4f0; /* soft luxurious cream */
-    padding: 30px;
+    background: linear-gradient(145deg, #fdf6f0, #f7eee1);
     border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(191,160,127,0.15);
     transition: all 0.4s ease;
     font-family: 'Cormorant Garamond', serif;
     color: #4a3f36;
 }
 
 #expertise .card:hover {
-    box-shadow: 0 12px 40px rgba(0,0,0,0.15), 0 0 15px rgba(191,160,127,0.3);
+    box-shadow: 0 12px 40px rgba(191,160,127,0.25), 0 0 15px rgba(255,215,180,0.3);
     transform: translateY(-3px);
 }
 
 #expertise .card .icon {
     font-size: 40px;
-    color: #bfa07f; /* golden metallic vibe */
+    color: #bfa07f; /* gold */
     margin-bottom: 15px;
 }
 
@@ -226,9 +216,16 @@ ul {
     font-size: 16px;
 }
 
+/* CONTACT NUMBERS SPECIAL FONT */
+.contact-info .phone {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #3b3229;
+}
+
 /* FOOTER */
 footer {
-    background: #eadac9; /* lighter beige */
+    background: #f3e8dc;
     color: #6d5c4b;
     text-align: center;
     padding: 25px;
@@ -377,7 +374,7 @@ footer {
 </div>
 </div>
 
-<!-- OUR EXPERTISE SECTION -->
+<!-- EXPERTISE SECTION -->
 <div class="section" id="expertise">
 <h2>Our Expertise</h2>
 <div class="grid">
@@ -417,7 +414,7 @@ footer {
 <!-- CONTACT INFO -->
 <div class="section contact-info" id="contact">
 <h2>Contact Us 📞</h2>
-<p><strong>Phone:</strong> 7014941806, 9509106607</p>
+<p><strong>Phone:</strong> <span class="phone">7014941806, 9509106607</span></p>
 <p><strong>Address:</strong> 10/11 Navedia Bhawan, Paneri Upwan, Fatehpura, Udaipur, Rajasthan, 313001</p>
 </div>
 
