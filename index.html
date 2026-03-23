@@ -93,7 +93,7 @@ nav a:hover {
 .section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 34px;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* smaller line like you said */
     text-align:center;
     color:#4a3f36;
     position:relative;
@@ -102,7 +102,7 @@ nav a:hover {
 .section h2::after {
     content:'';
     position:absolute;
-    width:50px;
+    width:50px; /* smaller line */
     height:3px;
     background:#bfa07f;
     left:50%;
@@ -132,10 +132,16 @@ nav a:hover {
 #expertise .card {
     background: linear-gradient(135deg,#fff8f2,#fdf6f0);
     border-radius:20px;
-    padding:30px;
+    padding:20px;
     box-shadow:0 8px 30px rgba(191,160,127,0.15);
     text-align:center;
     transition: all 0.4s ease;
+}
+
+#expertise .card img {
+    width: 80px;
+    margin-bottom:15px;
+    border-radius:10px;
 }
 
 #expertise .card:hover {
@@ -168,8 +174,8 @@ nav a:hover {
 }
 
 .contact-info .phone {
-    font-family: 'Playfair Display', serif;
-    font-weight:700;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight:400;
     font-size:18px;
 }
 
@@ -225,14 +231,6 @@ nav a:hover {
 <!-- SERVICES -->
 <div class="section" id="services">
 <h2>Event Planning</h2>
-<p>Wedding Planning<br>
-Birthday Planning<br>
-Bachelorette Planning<br>
-Corporate Events<br>
-Baby Showers<br>
-Anniversaries<br>
-Social Gatherings
-</p>
 
 <h3>Wedding Planning</h3>
 <p>
@@ -260,13 +258,17 @@ Post-wedding services (reception planning, gifting, wrap-up)
 
 <h3>More Services</h3>
 <p>
-Birthday parties<br>
-Corporate events<br>
-Bachelorette parties<br>
-Baby showers<br>
+Birthday Parties<br>
+Corporate Events<br>
+Bachelorette Parties<br>
+Baby Showers<br>
 Anniversaries<br>
-Social gatherings
+Social Gatherings
 </p>
+<p>
+We also provide curated décor, entertainment, and full event coordination for all these events.
+</p>
+
 </div>
 
 <!-- WHY HIRE US -->
@@ -279,12 +281,12 @@ Social gatherings
 <div class="section" id="expertise">
 <h2>Our Expertise</h2>
 <div class="grid">
-<div class="card"><h3>Music & Entertainment</h3></div>
-<div class="card"><h3>Destination Weddings</h3></div>
-<div class="card"><h3>Vendor Management</h3></div>
-<div class="card"><h3>Hospitality & Transport</h3></div>
-<div class="card"><h3>Budget Management</h3></div>
-<div class="card"><h3>Wedding Planning</h3></div>
+<div class="card"><img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"><h3>Music & Entertainment</h3><p>From live artists to DJs and curated performances, we create unforgettable entertainment experiences full of energy.</p></div>
+<div class="card"><img src="https://cdn-icons-png.flaticon.com/512/3170/3170347.png" alt="Destination"><h3>Destination Weddings</h3><p>We design and execute breathtaking destination weddings, managing everything from travel to venue styling.</p></div>
+<div class="card"><img src="https://cdn-icons-png.flaticon.com/512/1077/1077046.png" alt="Vendor"><h3>Vendor Management</h3><p>With our trusted vendor network, we ensure seamless execution of décor, catering, and all services.</p></div>
+<div class="card"><img src="https://cdn-icons-png.flaticon.com/512/1183/1183457.png" alt="Hospitality"><h3>Hospitality & Transport</h3><p>We manage guest stays, welcome experiences, and smooth transportation throughout the celebration.</p></div>
+<div class="card"><img src="https://cdn-icons-png.flaticon.com/512/1380/1380338.png" alt="Budget"><h3>Budget Management</h3><p>We help you plan smartly, keeping your wedding within budget while delivering a luxurious experience.</p></div>
+<div class="card"><img src="https://cdn-icons-png.flaticon.com/512/1159/1159163.png" alt="Planning"><h3>Wedding Planning</h3><p>End-to-end planning from concept to execution, ensuring a stress-free and beautifully curated wedding.</p></div>
 </div>
 </div>
 
