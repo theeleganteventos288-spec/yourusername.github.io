@@ -17,7 +17,7 @@ body {
 
 /* HEADER */
 header {
-    background: #d9c7b7; /* soft, luxury beige */
+    background: #d9c7b7;
     color: #2c2c2c;
     text-align: center;
     padding: 25px;
@@ -68,7 +68,7 @@ nav a:hover {
 .hero::before {
     content: "";
     position: absolute;
-    top: 45%; /* shifted slightly */
+    top: 45%;
     left: 50%;
     width: 110%;
     height: 110%;
@@ -115,7 +115,7 @@ ul {
     text-align: left;
 }
 
-/* MORE SERVICES COLLAPSIBLE */
+/* COLLAPSIBLE MORE SERVICES */
 .collapsible {
     background-color: #d9c7b7;
     color: #3b3229;
@@ -148,6 +148,43 @@ ul {
 
 .content li {
     margin-bottom: 8px;
+}
+
+/* EXPERTISE GRID */
+#expertise .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+#expertise .card {
+    background: #fff8f2;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    font-family: 'Cormorant Garamond', serif;
+    color: #4a3f36;
+}
+
+#expertise .card:hover {
+    transform: translateY(-5px);
+}
+
+#expertise .card .icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#expertise .card h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+#expertise .card p {
+    font-size: 15px;
+    line-height: 1.5;
 }
 
 /* CONTACT INFO */
@@ -184,9 +221,10 @@ footer {
 <nav>
 <a href="#">Home</a>
 <a href="#about">About</a>
+<a href="#why-hire">Why Hire Us</a>
 <a href="#founder">Founder</a>
 <a href="#services">Services</a>
-<a href="#">Gallery</a>
+<a href="#expertise">Expertise</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -201,6 +239,12 @@ footer {
 <p>With a portfolio of 60+ meticulously curated events, we specialize in luxury wedding planning while also designing bespoke bachelorette soirées, birthday celebrations, baby showers, and corporate gatherings. Every event we create is a seamless blend of elegance, creativity, and precision — thoughtfully tailored to reflect the unique vision of our clients.</p>
 <p>From conceptualisation to flawless execution, we offer end-to-end event planning services, ensuring every detail — from décor aesthetics to guest experience — is handled with sophistication and care. Our strength lies in our eye for detail, strong vendor collaborations, and the ability to turn even the smallest ideas into grand, immersive experiences.</p>
 <p>At Elegant Eventos, we don’t just plan events — we design moments that linger long after the celebration ends.</p>
+</div>
+
+<!-- WHY HIRE US SECTION -->
+<div class="section" id="why-hire">
+<h2>Why Hire Us as Your Wedding Planner?</h2>
+<p>We turn your vision into a beautifully curated celebration, handling every detail with precision and care. From concept to execution, our team ensures a seamless and stress-free experience for you and your family. With strong vendor networks and creative expertise, we deliver designs that are elegant, unique, and memorable. We focus on personalization, making every wedding a true reflection of your story. Our commitment to quality, timelines, and flawless execution sets us apart. With us, you don’t just plan a wedding—you experience it. ✨</p>
 </div>
 
 <!-- FOUNDER SECTION -->
@@ -304,6 +348,43 @@ footer {
 <li>Event day coordination & timeline management</li>
 <li>Luxury add-ons: lighting, floral design, audio-visual experiences, welcome kits</li>
 </ul>
+</div>
+</div>
+
+<!-- OUR EXPERTISE SECTION -->
+<div class="section" id="expertise">
+<h2>Our Expertise</h2>
+<div class="grid">
+<div class="card">
+<div class="icon">🎶</div>
+<h3>Musical Entertainment</h3>
+<p>From live artists to DJs and curated performances, we create unforgettable entertainment experiences full of energy.</p>
+</div>
+<div class="card">
+<div class="icon">🌍</div>
+<h3>Destination Weddings</h3>
+<p>We design and execute breathtaking destination weddings, managing everything from travel to venue styling.</p>
+</div>
+<div class="card">
+<div class="icon">🤝</div>
+<h3>Vendor Management</h3>
+<p>With our trusted vendor network, we ensure seamless execution of décor, catering, and all services.</p>
+</div>
+<div class="card">
+<div class="icon">🚗</div>
+<h3>Hospitality & Transport</h3>
+<p>We manage guest stays, welcome experiences, and smooth transportation throughout the celebration.</p>
+</div>
+<div class="card">
+<div class="icon">💰</div>
+<h3>Budget Management</h3>
+<p>We help you plan smartly, keeping your wedding within budget while delivering a luxurious experience.</p>
+</div>
+<div class="card">
+<div class="icon">💍</div>
+<h3>Wedding Planning</h3>
+<p>End-to-end planning from concept to execution, ensuring a stress-free and beautifully curated wedding.</p>
+</div>
 </div>
 </div>
 
