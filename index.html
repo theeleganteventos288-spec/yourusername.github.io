@@ -15,15 +15,21 @@ body {
     background: #fffaf6;
     background-image: radial-gradient(circle at top left, rgba(255, 235, 210, 0.2), rgba(255, 250, 245, 0.2) 70%);
     color: #4a3f36;
+    padding-top: 160px; /* header + nav fixed spacing */
 }
 
 /* HEADER */
 header {
-    background: #f7f1e6; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #f7f1e6;
     color: #2c2c2c;
     text-align: center;
     padding: 25px;
     box-shadow: 0 2px 10px rgba(191,160,127,0.2);
+    z-index: 999;
 }
 
 header h1 {
@@ -40,11 +46,16 @@ header p {
 
 /* NAVBAR */
 nav {
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     gap: 40px;
     background: #fff8f2;
     padding: 15px;
+    z-index: 998;
     box-shadow: 0 2px 10px rgba(191,160,127,0.15);
 }
 
@@ -120,7 +131,7 @@ nav a:hover {
     border-radius: 2px;
 }
 
-/* GLITTER EFFECT SPARKLES */
+/* GLITTER EFFECT */
 .glitter {
     background: linear-gradient(145deg, rgba(255, 235, 200, 0.15), rgba(255, 245, 220, 0.15));
     border-radius: 15px;
@@ -142,6 +153,8 @@ nav a:hover {
     font-size: 16px;
     line-height: 1.8;
     color: #5c5045;
+    text-align: left;
+    margin: 10px auto;
 }
 
 /* EXPERTISE */
@@ -193,6 +206,7 @@ nav a:hover {
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(191,160,127,0.12);
+    text-align: center;
 }
 
 .contact-info p {
@@ -205,15 +219,6 @@ nav a:hover {
     font-weight: 700;
     font-size: 18px;
     color: #3b3229;
-}
-
-/* FOOTER */
-footer {
-    background: #f3e8dc;
-    color: #6d5c4b;
-    text-align: center;
-    padding: 25px;
-    margin-top: 50px;
 }
 
 /* COLLAPSIBLE MORE SERVICES */
@@ -244,7 +249,7 @@ footer {
     background-color: #fffaf6;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(191,160,127,0.12);
-    text-align: center;
+    text-align: left;
 }
 </style>
 </head>
@@ -302,14 +307,50 @@ footer {
 <div class="section" id="services">
 <div class="glitter">
 <h2>Event Planning</h2>
-<p>Our expertise lies in creating luxurious weddings and memorable celebrations.</p>
+<p style="text-align:left;">
+Wedding Planning<br>
+Birthday Planning<br>
+Bachelorette/Bachelor Parties<br>
+Corporate Events<br>
+Baby Showers<br>
+Anniversaries<br>
+Social Gatherings
+</p>
 
 <h3>Wedding Planning 💍</h3>
-<p>Full-service wedding planning & end-to-end coordination, destination wedding planning & logistics, concept creation, decor & theme design, venue selection & booking assistance, vendor management (photographers, videographers, caterers, makeup artists, entertainers, etc.), budget planning & cost management, guest management (RSVPs, hospitality, welcome kits), travel & accommodation arrangements for guests, invitation design & wedding stationery coordination, bridal & groom styling coordination (outfits, makeup, grooming), entertainment planning (DJ, live artists, performances), wedding rituals & ceremony planning (timeline, traditions, flow), Mehndi, Haldi, Sangeet & pre-wedding function planning, pre-wedding shoot planning & execution, luxury experiences & curated guest activities, logistics & transportation management, wedding day timeline creation & execution, on-ground team management & troubleshooting, day-of coordination for seamless execution, post-wedding services (reception planning, gifting, wrap-up).</p>
+<p style="text-align:left;">
+Full-service wedding planning & end-to-end coordination<br>
+Destination wedding planning & logistics<br>
+Concept creation, decor & theme design<br>
+Venue selection & booking assistance<br>
+Vendor management (photographers, videographers, caterers, makeup artists, entertainers, etc.)<br>
+Budget planning & cost management<br>
+Guest management (RSVPs, hospitality, welcome kits)<br>
+Travel & accommodation arrangements for guests<br>
+Invitation design & wedding stationery coordination<br>
+Bridal & groom styling coordination (outfits, makeup, grooming)<br>
+Entertainment planning (DJ, live artists, performances)<br>
+Wedding rituals & ceremony planning (timeline, traditions, flow)<br>
+Mehndi, Haldi, Sangeet & pre-wedding function planning<br>
+Pre-wedding shoot planning & execution<br>
+Luxury experiences & curated guest activities<br>
+Logistics & transportation management<br>
+Wedding day timeline creation & execution<br>
+On-ground team management & troubleshooting<br>
+Day-of coordination for seamless execution<br>
+Post-wedding services (reception planning, gifting, wrap-up)
+</p>
 
 <button class="collapsible">More Services ⬇️</button>
 <div class="content">
-<p>Birthday parties, bachelorette/bachelor parties, corporate events, baby showers, anniversaries, and social gatherings — all meticulously planned with elegance and precision.</p>
+<p style="text-align:left;">
+Birthday parties<br>
+Bachelorette/Bachelor parties<br>
+Corporate events<br>
+Baby showers<br>
+Anniversaries<br>
+Social gatherings
+</p>
 </div>
 </div>
 </div>
