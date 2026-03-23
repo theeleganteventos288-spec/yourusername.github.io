@@ -1,83 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Astha Events</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        header {
-            background: #000;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        nav {
-            background: #333;
-            padding: 10px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-        }
-        .hero {
-            height: 400px;
-            background: url('https://via.placeholder.com/1200x400') no-repeat center/cover;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 30px;
-            font-weight: bold;
-        }
-        .section {
-            padding: 40px;
-            text-align: center;
-        }
-        footer {
-            background: #000;
-            color: white;
-            text-align: center;
-            padding: 15px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astha Events</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f8f8f8;
+}
+
+header {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: #222;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.hero {
+    height: 90vh;
+    background: url('https://images.unsplash.com/photo-1519741497674-611481863552') center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+}
+
+.section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.services {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.gallery img {
+    width: 300px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: green;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>Astha Events</h1>
-    <p>Creating unforgettable moments</p>
+<h1>Astha Events</h1>
+<p>Luxury Event Planning</p>
 </header>
 
 <nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Gallery</a>
-    <a href="#">Contact</a>
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Gallery</a>
+<a href="#">Contact</a>
 </nav>
 
 <div class="hero">
-    Your Dream Event, Our Expertise
+<h2>Your Dream Event, Perfectly Designed</h2>
 </div>
 
 <div class="section">
-    <h2>Our Services</h2>
-    <p>Weddings | Corporate Events | Private Parties</p>
+<h2>Our Services</h2>
+<div class="services">
+<div class="card">Weddings</div>
+<div class="card">Corporate Events</div>
+<div class="card">Private Parties</div>
+</div>
 </div>
 
-<div class="section">
-    <h2>Why Choose Us?</h2>
-    <p>We plan, design, and execute events with perfection.</p>
+<div class="section gallery">
+<h2>Gallery</h2>
+<img src="https://images.unsplash.com/photo-1520857014576-2c4f4c972b57">
+<img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329">
+<img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622">
 </div>
+
+<a class="whatsapp" href="https://wa.me/91XXXXXXXXXX">💬</a>
 
 <footer>
-    <p>© 2026 Astha Events</p>
+<p>© 2026 Astha Events</p>
 </footer>
 
 </body>
