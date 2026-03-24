@@ -61,7 +61,7 @@ nav a:hover {
     color: #bfa07f;
 }
 
-/* HERO */
+
 /* HERO */
 .hero {
     height: 70vh;
@@ -71,16 +71,13 @@ nav a:hover {
     text-align: center;
     color: #fff5e6;
     position: relative;
-
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease-in-out;
+    overflow: hidden; /* important to hide overflow of images */
 }
 
-/* HERO SLIDESHOW IMAGES */
 .hero-img {
     position: absolute;
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 70vh;
     object-fit: cover;
@@ -108,6 +105,8 @@ nav a:hover {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     text-shadow: 2px 2px 8px rgba(255, 215, 180, 0.5);
+    position: relative; /* to stay above images */
+    z-index: 1;
 }
 
 /* SECTIONS */
@@ -376,11 +375,20 @@ nav a:hover {
 </nav>
 
 <div class="hero">
-  <img src="admin/hero1.jpg" class="hero-img active" alt="Hero Image 1">
-  <img src="admin/hero2.jpg" class="hero-img" alt="Hero Image 2">
-  <img src="admin/hero3.jpg" class="hero-img" alt="Hero Image 3">
-  <img src="admin/hero4.jpg" class="hero-img" alt="Hero Image 4">
-  <img src="admin/hero5.jpg" class="hero-img" alt="Hero Image 5">
+    <h2>Designing Timeless Indian Weddings with Elegance</h2>
+
+    <!-- Slideshow images -->
+    <img src="hero1.jpg" class="hero-img active">
+    <img src="hero2.jpg" class="hero-img">
+    <img src="hero3.jpg" class="hero-img">
+    <img src="hero4.jpg" class="hero-img">
+    <img src="hero5.jpg" class="hero-img">
+    <img src="hero6.jpg" class="hero-img">
+    <img src="hero7.jpg" class="hero-img">
+    <img src="hero8.jpg" class="hero-img">
+    <img src="hero9.jpg" class="hero-img">
+    <img src="hero10.jpg" class="hero-img">
+</div>
   <h2>Designing Timeless Indian Weddings with Elegance</h2>
 </div>
 
@@ -580,19 +588,17 @@ const images = [
     "admin/admin/hero14.jpg"
 ];
 
-let i = 0;
-const hero = document.querySelector(".hero");
+<script>
+window.addEventListener('load', () => {
+    const slides = document.querySelectorAll('.hero-img');
+    let current = 0;
 
-function changeBackground() {
-    hero.style.backgroundImage = "url('" + images[i] + "')";
-    i = (i + 1) % images.length;
-}
-
-hero.style.backgroundImage = "url('hero1.jpg')";
-changeBackground();
-setInterval(changeBackground, 4000);
-
-};
+    setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, 4000); // 4 seconds per slide
+});
 </script>
 </body>
 </html>
