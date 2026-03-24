@@ -1,9 +1,9 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Elegant Eventos</title> 
+<title>The Elegant Eventos</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 
@@ -74,11 +74,13 @@ nav a:hover {
     height:100%;
     top:0; left:0;
     background: rgba(255,235,200,0.25);
+    pointer-events:none;
 }
 
 .hero h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 36px;
+    font-size: 36px; /* smaller line as requested */
+    text-shadow: 2px 2px 8px rgba(255, 215, 180, 0.5);
 }
 
 /* SECTIONS */
@@ -91,7 +93,9 @@ nav a:hover {
 .section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 34px;
+    margin-bottom: 10px; /* smaller line */
     text-align:center;
+    color:#4a3f36;
     position:relative;
 }
 
@@ -106,59 +110,122 @@ nav a:hover {
     bottom:-10px;
 }
 
-/* PREMIUM GALLERY */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
+.section h3 {
+    margin-top:30px;
+    color:#4a3f36;
 }
 
-.gallery-grid img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 20px;
-    cursor: pointer;
+.section p {
+    line-height:1.8;
+}
+
+/* SERVICES MORE POPUP */
+#moreServicesContent {
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    max-width:500px;
+    box-shadow:0 8px 30px rgba(191,160,127,0.25);
+    z-index:1000;
+    overflow-y:auto;
+    max-height:80vh;
+}
+
+#moreServicesContent h4 {
+    margin-top:15px;
+    margin-bottom:5px;
+}
+
+#moreServicesContent p {
+    margin-bottom:10px;
+}
+
+#overlay {
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background: rgba(0,0,0,0.4);
+    z-index:999;
+}
+
+/* EXPERTISE */
+#expertise {
+    background: linear-gradient(135deg, #fffaf6, #fff4e8);
+    padding:60px 20px;
+    border-radius:20px;
+}
+
+#expertise .grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+#expertise .card {
+    background: linear-gradient(135deg,#fff8f2,#fdf6f0);
+    border-radius:20px;
+    padding:30px 20px;
+    box-shadow:0 8px 30px rgba(191,160,127,0.15);
+    text-align:center;
     transition: all 0.4s ease;
-    box-shadow: 0 15px 35px rgba(191,160,127,0.25);
+    position:relative;
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.05);
+#expertise .card::before {
+    content:'';
+    position:absolute;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background: url('https://images.unsplash.com/photo-1524253482453-3fed8d2fe12b?auto=format&fit=crop&w=800&q=80');
+    opacity:0.05;
+    border-radius:20px;
+    z-index:0;
 }
 
-/* LIGHTBOX */
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.9);
+#expertise .card h3, #expertise .card p {
+    position:relative;
+    z-index:1;
 }
 
-.lightbox img {
-    margin: auto;
-    display: block;
-    max-width: 85%;
-    max-height: 80%;
-    margin-top: 5%;
+#expertise .card:hover {
+    box-shadow:0 12px 40px rgba(191,160,127,0.25),0 0 15px rgba(255,215,180,0.3);
+    transform: translateY(-3px);
 }
 
-.lightbox span {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
+/* CONTACT */
+.contact-info {
+    text-align:center;
+    background:#fff;
+    padding:25px;
+    border-radius:15px;
+}
+
+.contact-info p {
+    margin:8px 0;
+    font-family:'Cormorant Garamond', serif;
+    font-weight:400;
+}
+
+.contact-info .social-icons img {
+    width:30px;
+    margin:10px;
+}
+
+/* WHATSAPP */
+.whatsapp img {
+    width:50px;
+    border-radius:50%;
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -171,7 +238,6 @@ nav a:hover {
 <a href="#founder">Founder</a>
 <a href="#services">Services</a>
 <a href="#expertise">Expertise</a>
-<a href="#gallery">Gallery</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -179,22 +245,117 @@ nav a:hover {
 <h2>Designing Timeless Indian Weddings with Elegance</h2>
 </div>
 
-<!-- (ALL YOUR SECTIONS SAME — NOT REMOVED) -->
+<!-- ABOUT -->
+<div class="section" id="about">
+<h2>About Elegant Eventos</h2>
+<p>At Elegant Eventos, we craft experiences that are timeless, refined, and deeply personal. Established in 2020, our journey has been defined by a passion for transforming celebrations into unforgettable stories.</p>
+<p>With a portfolio of 60+ meticulously curated events, we specialize in luxury wedding planning while also designing bespoke bachelorette soirées, birthday celebrations, baby showers, and corporate gatherings. Every event we create is a seamless blend of elegance, creativity, and precision — thoughtfully tailored to reflect the unique vision of our clients.</p>
+<p>From conceptualisation to flawless execution, we offer end-to-end event planning services, ensuring every detail — from décor aesthetics to guest experience — is handled with sophistication and care. Our strength lies in our eye for detail, strong vendor collaborations, and the ability to turn even the smallest ideas into grand, immersive experiences.</p>
+<p>At Elegant Eventos, we don’t just plan events — we design moments that linger long after the celebration ends.</p>
+</div>
+
+<!-- FOUNDER -->
+<div class="section" id="founder">
+<h2>About the Founder</h2>
+<p>I’m Kapil Navedia, founder of Elegant Eventos, based in the royal city of Udaipur, Rajasthan — a destination synonymous with grandeur and timeless celebrations.</p>
+<p>What began in 2020 as a vision driven by passion has today evolved into a journey of creativity, growth, and meaningful connections. Over the years, I’ve had the privilege of working on diverse celebrations, gaining invaluable experience and the trust of wonderful clients.</p>
+<p>My approach is simple — every event is personal. I believe in understanding each client’s story and translating it into an experience that feels effortless, elegant, and truly unforgettable. With a hands-on approach and a keen eye for detail, I ensure that every celebration carries a signature touch of sophistication.</p>
+<p>For me, success is measured not just by beautifully executed events, but by the smiles, emotions, and memories we create along the way.</p>
+</div>
+
+<!-- SERVICES -->
+<div class="section" id="services">
+<h2>Event Planning</h2>
+
+<h3>Wedding Planning</h3>
+<p>
+Full-service wedding planning & end-to-end coordination<br>
+Destination wedding planning & logistics<br>
+Concept creation, decor & theme design<br>
+Venue selection & booking assistance<br>
+Vendor management (photographers, videographers, caterers, makeup artists, entertainers, etc.)<br>
+Budget planning & cost management<br>
+Guest management (RSVPs, hospitality, welcome kits)<br>
+Travel & accommodation arrangements for guests<br>
+Invitation design & wedding stationery coordination<br>
+Bridal & groom styling coordination (outfits, makeup, grooming)<br>
+Entertainment planning (DJ, live artists, performances)<br>
+Wedding rituals & ceremony planning (timeline, traditions, flow)<br>
+Mehndi, Haldi, Sangeet & pre-wedding function planning<br>
+Pre-wedding shoot planning & execution<br>
+Luxury experiences & curated guest activities<br>
+Logistics & transportation management<br>
+Wedding day timeline creation & execution<br>
+On-ground team management & troubleshooting<br>
+Day-of coordination for seamless execution<br>
+Post-wedding services (reception planning, gifting, wrap-up)
+</p>
+
+<h3><a href="#" onclick="openServices()">More Services</a></h3>
+</div>
+
+<!-- MORE SERVICES POPUP -->
+<div id="overlay" onclick="closeServices()"></div>
+<div id="moreServicesContent">
+<h4>Birthday Parties 🎂</h4>
+<p>From intimate celebrations to grand themed parties, we create fun-filled experiences tailored to every age. We handle décor, entertainment, and planning to make every birthday truly memorable.</p>
+
+<h4>Corporate Events 🏢</h4>
+<p>Professional and well-curated events designed to reflect your brand identity and goals. From conferences to team events, we ensure seamless execution with a premium touch.</p>
+
+<h4>Bachelorette Parties 💃</h4>
+<p>Stylish, fun, and unforgettable celebrations planned with personalized themes and experiences. From décor to activities, we create the perfect vibe for a bride-to-be’s special moments.</p>
+
+<h4>Baby Showers 👶</h4>
+<p>Elegant and heartwarming celebrations to welcome new beginnings with your loved ones. We design beautiful setups and manage every detail for a stress-free experience.</p>
+
+<h4>Anniversaries ❤️</h4>
+<p>Celebrate love milestones with thoughtfully curated themes and romantic setups. From intimate dinners to grand celebrations, we make every moment special.</p>
+
+<h4>Social Gatherings 🥂</h4>
+<p>Be it private parties or festive get-togethers, we bring people together beautifully. Our team ensures smooth planning, stylish décor, and a lively atmosphere.</p>
+
+<button onclick="closeServices()">Close</button>
+</div>
+
+<!-- WHY HIRE US -->
+<div class="section" id="why-hire">
+<h2>Why Hire Us as Your Wedding Planner?</h2>
+<p>We turn your vision into a beautifully curated celebration, handling every detail with precision and care. From concept to execution, our team ensures a seamless and stress-free experience for you and your family. With strong vendor networks and creative expertise, we deliver designs that are elegant, unique, and memorable. We focus on personalization, making every wedding a true reflection of your story. Our commitment to quality, timelines, and flawless execution sets us apart. With us, you don’t just plan a wedding—you experience it. ✨</p>
+</div>
 
 <!-- EXPERTISE -->
 <div class="section" id="expertise">
 <h2>Our Expertise</h2>
 <div class="grid">
-<div class="card"><h3>Music & Entertainment</h3></div>
-<div class="card"><h3>Destination Weddings</h3></div>
-<div class="card"><h3>Vendor Management</h3></div>
-<div class="card"><h3>Hospitality & Transport</h3></div>
-<div class="card"><h3>Budget Management</h3></div>
-<div class="card"><h3>Wedding Planning</h3></div>
+<div class="card">
+<h3>Music & Entertainment</h3>
+<p>From live artists to DJs and curated performances, we create unforgettable entertainment experiences full of energy.</p>
+</div>
+<div class="card">
+<h3>Destination Weddings</h3>
+<p>We design and execute breathtaking destination weddings, managing everything from travel to venue styling.</p>
+</div>
+<div class="card">
+<h3>Vendor Management</h3>
+<p>With our trusted vendor network, we ensure seamless execution of décor, catering, and all services.</p>
+</div>
+<div class="card">
+<h3>Hospitality & Transport</h3>
+<p>We manage guest stays, welcome experiences, and smooth transportation throughout the celebration.</p>
+</div>
+<div class="card">
+<h3>Budget Management</h3>
+<p>We help you plan smartly, keeping your wedding within budget while delivering a luxurious experience.</p>
+</div>
+<div class="card">
+<h3>Wedding Planning</h3>
+<p>End-to-end planning from concept to execution, ensuring a stress-free and beautifully curated wedding.</p>
 </div>
 </div>
-
-<!-- ✅ GALLERY ADDED PROPERLY -->
+</div>
+    
+<!-- GALLERY -->
 <div class="section" id="gallery">
 <h2>Our Work</h2>
 
@@ -216,26 +377,30 @@ A glimpse of our beautifully curated celebrations
 </div>
 </div>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-<span onclick="closeLightbox()">&times;</span>
-<img id="lightbox-img">
 </div>
 
+</div>
 <!-- CONTACT -->
 <div class="section contact-info" id="contact">
 <h2>Contact</h2>
 <p>Phone: 7014941806, 9509106607</p>
 <p>Address: 10/11 Navedia Bhawan, Paneri Upwan, Fatehpura, Udaipur, Rajasthan, 313001</p>
+
+<div class="social-icons">
+<a href="https://www.facebook.com/share/18TipK6Eqx/?mibextid=wwXIfr" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+<a href="https://www.instagram.com/the_eleganteventos" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram"></a>
+<a href="https://wa.me/917014941806" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"></a>
+</div>
 </div>
 
 <script>
-function openLightbox(img) {
-    document.getElementById("lightbox").style.display = "block";
-    document.getElementById("lightbox-img").src = img.src;
+function openServices() {
+    document.getElementById('moreServicesContent').style.display='block';
+    document.getElementById('overlay').style.display='block';
 }
-function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
+function closeServices() {
+    document.getElementById('moreServicesContent').style.display='none';
+    document.getElementById('overlay').style.display='none';
 }
 </script>
 
