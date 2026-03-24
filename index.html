@@ -70,8 +70,12 @@ nav a:hover {
     text-align: center;
     color: #fff5e6;
     position: relative;
-    
+
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
 }
+    
 
 .hero::after {
     content:'';
@@ -547,7 +551,11 @@ const images = [
     "hero7.jpg",
     "hero8.jpg",
     "hero9.jpg",
-    "hero10.jpg"
+    "hero10.jpg",
+    "hero11.jpg",
+    "hero12.jpg",
+    "hero13.jpg",
+    "hero14.jpg"
 ];
 
 let i = 0;
@@ -558,6 +566,7 @@ function changeBackground() {
     i = (i + 1) % images.length;
 }
 
+hero.style.backgroundImage = "url('hero1.jpg')";
 changeBackground();
 setInterval(changeBackground, 4000);
 
