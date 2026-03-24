@@ -8,28 +8,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    background-image: url('https://www.transparenttextures.com/patterns/gold-dust.png');
-    opacity: 0.12;
-
-    pointer-events: none;
-    z-index: -1; /* THIS IS THE FIX */
-}
-
 body {
-    position: relative;
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    background: #fffaf6;
+    color: #4a3f36;
+    scroll-behavior: smooth;
 }
 
 /* HEADER */
 header {
-    background: rgba(247, 241, 230, 0.85);
+    background: #f7f1e6;
     text-align: center;
     padding: 25px;
 }
@@ -51,14 +40,7 @@ nav {
     display: flex;
     justify-content: center;
     gap: 40px;
-    /* NAVBAR */
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
     background: #fff8f2;
-    padding: 15px;
-    border-bottom: 2px solid #bfa07f;
     padding: 15px;
     border-bottom: 2px solid #bfa07f;
 }
@@ -221,7 +203,7 @@ nav a:hover {
 /* CONTACT */
 .contact-info {
     text-align:center;
-    background: rgba(255,255,255,0.85);
+    background:#fff;
     padding:25px;
     border-radius:15px;
 }
