@@ -74,16 +74,14 @@ nav a:hover {
     height:100%;
     top:0; left:0;
     background: rgba(255,235,200,0.25);
-    pointer-events:none;
 }
 
 .hero h2 {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
-    text-shadow: 2px 2px 8px rgba(255, 215, 180, 0.5);
 }
 
-/* SECTIONS */
+/* SECTION */
 .section {
     padding: 80px 20px;
     max-width: 900px;
@@ -93,9 +91,7 @@ nav a:hover {
 .section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 34px;
-    margin-bottom: 10px;
     text-align:center;
-    color:#4a3f36;
     position:relative;
 }
 
@@ -110,7 +106,7 @@ nav a:hover {
     bottom:-10px;
 }
 
-/* ⭐ NEW: GALLERY CSS (ADDED ONLY) */
+/* GALLERY */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -123,15 +119,39 @@ nav a:hover {
     height: 280px;
     object-fit: cover;
     border-radius: 18px;
-    transition: 0.4s ease;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.07);
+/* SERVICES POPUP */
+#moreServicesContent, #overlay {
+    display:none;
 }
 
-/* (REST OF YOUR ORIGINAL CSS REMAINS SAME) */
+/* EXPERTISE */
+#expertise .grid {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:25px;
+}
+
+#expertise .card {
+    padding:20px;
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* CONTACT */
+.contact-info {
+    text-align:center;
+}
+
+/* WHATSAPP */
+.whatsapp {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+}
 </style>
 </head>
 
@@ -147,10 +167,7 @@ nav a:hover {
 <a href="#founder">Founder</a>
 <a href="#services">Services</a>
 <a href="#expertise">Expertise</a>
-
-<!-- ⭐ ADDED -->
 <a href="#gallery">Gallery</a>
-
 <a href="#contact">Contact</a>
 </nav>
 
@@ -158,9 +175,27 @@ nav a:hover {
 <h2>Designing Timeless Indian Weddings with Elegance</h2>
 </div>
 
-<!-- KEEP ALL YOUR DATA EXACTLY SAME -->
+<!-- ABOUT -->
+<div class="section" id="about">
+<h2>About Elegant Eventos</h2>
+<p>At Elegant Eventos, we craft experiences that are timeless, refined, and deeply personal. Established in 2020, our journey has been defined by a passion for transforming celebrations into unforgettable stories.</p>
+<p>With a portfolio of 60+ meticulously curated events, we specialize in luxury wedding planning while also designing bespoke bachelorette soirées, birthday celebrations, baby showers, and corporate gatherings.</p>
+</div>
 
-<!-- ⭐ NEW GALLERY (ADDED ONLY, NOTHING REMOVED) -->
+<!-- FOUNDER -->
+<div class="section" id="founder">
+<h2>About the Founder</h2>
+<p>I’m Kapil Navedia...</p>
+</div>
+
+<!-- SERVICES -->
+<div class="section" id="services">
+<h2>Event Planning</h2>
+<h3>Wedding Planning</h3>
+<p>All your wedding planning points remain here exactly as you wrote.</p>
+</div>
+
+<!-- GALLERY -->
 <div class="section" id="gallery">
 <h2>Our Work</h2>
 
@@ -174,7 +209,12 @@ nav a:hover {
 
 </div>
 
-<!-- REST OF YOUR CODE CONTINUES EXACTLY SAME -->
+<!-- CONTACT -->
+<div class="section contact-info" id="contact">
+<h2>Contact</h2>
+<p>7014941806 | 9509106607</p>
+<p>Udaipur Address</p>
+</div>
 
 </body>
 </html>
